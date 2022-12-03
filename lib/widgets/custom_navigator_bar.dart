@@ -10,13 +10,12 @@ class CustomNavigatorBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final uiProvider = Provider.of<UiProvider>(context) ;
 
-    final currentIndex = uiProvider.menuSelected;
     return BottomNavigationBar(
       elevation: 0,
         onTap:(int i ){
         uiProvider.setMenu= i;
         } ,
-        currentIndex: currentIndex,
+        currentIndex: uiProvider.menuSelected,
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(Icons.map),
